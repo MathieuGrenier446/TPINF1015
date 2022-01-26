@@ -1,0 +1,3 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (exoo1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  exoo1.cpp
+  exoo1.vcxproj -> C:\Users\hadia\source\repos\td1\Debug\ex1.exe
