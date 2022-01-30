@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\hadia\OneDrive\Desktop\TPINF1015\td1\ex3\Source.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\hadia\OneDrive\Desktop\TPINF1015\td1\ex3\Source.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\hadia\OneDrive\Desktop\TPINF1015\td1\ex3\Source.cpp(21,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  ex3.vcxproj -> C:\Users\hadia\OneDrive\Desktop\TPINF1015\td1\Debug\ex3.exe
