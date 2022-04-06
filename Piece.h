@@ -4,7 +4,7 @@ class Piece
 	public:
 	Piece()
 	{
-	ass
+	
 	}
 
 	private:
