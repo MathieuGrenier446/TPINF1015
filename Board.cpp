@@ -6,7 +6,7 @@ Board::Board()
 	{
 		for(int j = 0; j < 8; j++)
 		{
-			map_[i][j] = nullptr;
+			map_[(i,j)] = nullptr;
 		}
 	}
 }

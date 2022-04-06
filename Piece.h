@@ -4,8 +4,14 @@ class Piece
 	public:
 	Piece()
 	{
-		assholeee
+		
 	}
+
+	virtual void move(){ 
+		
+	}
+
+
 
 	private:
 
