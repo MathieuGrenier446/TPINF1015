@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+#include <map>
 #include <memory>
 #include "Piece.h"
 
@@ -9,5 +9,5 @@ class Board
 	Board();
 
 	private:
-	std::vector<std::vector<std::unique_ptr<Piece>>> map_; 
-}
+	std::map<std::tuple<int,int>, std::unique_ptr<Piece>> map_; 
+};
