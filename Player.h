@@ -1,13 +1,12 @@
 #pragma once
-#include <iostream>
 #include "ChessBoard.h"
 
 class Player
 {
 	public:
-	Player();
+	Player(ChessBoard chessBoard);
 	void makeMove(coordinate origin, coordinate destination);
 
 	private:
-	ChessBoard chessBoard;
+	std::shared_ptr<ChessBoard> chessBoard_;
 };

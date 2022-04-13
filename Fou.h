@@ -1,15 +1,18 @@
 #pragma once
 #include "Piece.h"
+#include <string>
 
 class Fou : Piece
 {	
 	public:
 
-	Fou(coordinate position);
+	Fou(std::string colour);
 
-	board findPath(coordinate destination);
-	bool isMovePossible(coordinate destination);
+	bool isPathClear(coordinate origin, coordinate destination, std::map<coordinate, std::shared_ptr<Piece>> board);
+	bool isMovePossible(coordinate origin, coordinate destination);
 
 	private:
-	coordinate position_;
+	std::string colour_;
+	char type_;
+	
 };

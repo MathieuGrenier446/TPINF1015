@@ -1,41 +1,29 @@
 #include "Fou.h"
 
-Fou::Fou(coordinate position)
+Fou::Fou(std::string colour)
 {
-	position_ = position;
+	colour_ = colour;
 }
 
-std::shared_ptr<std::shared_ptr<int[]>[]> Fou::findPath(coordinate destination)
+bool Fou::isPathClear(coordinate origin, coordinate destination, std::map<coordinate, std::shared_ptr<Piece>> board)
 {
-	board path;
-	path = std::make_shared<std::shared_ptr<int[]>>(8);
+	int xDirection = xPos(origin) > xPos(destination) ? 1 : -1;
+	int yDirection = yPos(origin) < yPos(destination) ? 1 : -1;
 
-	for(int i = 0; i < 8; i++)
+	for(int i = 0; i < abs(xPos(origin)-xPos(destination)); i++)
 	{
-		path[i] = std::make_shared<int[]>(8);
-	}
-
-	int xDirection = xPos(position_) > xPos(destination) ? 1 : -1;
-	int yDirection = yPos(position_) > yPos(destination) ? 1 : -1;
-
-	for(int i = 0; i < 8; i++)
-	{
-		for(int j = 0; j < 8; j++)
+		for(int j = 0; j < abs(yPos(origin) - yPos(destination)); j++)
 		{
-			if(i < abs(xPos(position_) - xPos(destination)) && j < abs(yPos(position_) - yPos(destination)))
+			if(!(board[coordinate(xPos(origin) + xDirection * i, yPos(origin) + yDirection * j)] == nullptr))
 			{
-				path[i][j] = 1;
-			}
-			else
-			{
-				path[i][j] = 0;
+				return false;
 			}
 		}
 	}
-	return path;
+	return true;
 };
 
-bool Fou::isMovePossible(coordinate destination)
+bool Fou::isMovePossible(coordinate origin, coordinate destination)
 {
-	return abs(xPos(position_) - xPos(destination)) == abs(yPos(position_) - yPos(destination));
+	return abs(xPos(origin) - xPos(destination)) == abs(yPos(origin) - yPos(destination));
 };

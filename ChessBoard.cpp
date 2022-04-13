@@ -7,36 +7,32 @@ ChessBoard::ChessBoard()
 		for(int j = 0; j < 8; j++)
 		{
 			coordinate squarePosition(i,j);
-			board_[squarePosition] = Square();
+			board_[squarePosition] = nullptr;
 		}
 	}
-	Fou fou = Fou(coordinate(1, 1));
-	board_[coordinate(1,1)] = Square(fou);
 }
 
-bool ChessBoard::isMoveLegal(coordinate oldPosition, coordinate newPosition)
+bool ChessBoard::isMoveLegal(coordinate origin, coordinate destination)
 {
+	std::shared_ptr<Piece> piece = getPiece(origin);
 
-	if(board_[oldPosition].getPiece()->isMovePossible(newPosition))
+	if(piece->isMovePossible(origin, destination))
 	{
-		board path (board_[oldPosition].getPiece()->findPath(newPosition));
-		for(int i = 0; i<8 ; i++)
-		{
-			for(int j = 0; j < 8; j++)
-			{
-				if(path[i][j])
-				{
-					if(!board_[coordinate(i,j)].isAvailable()){
-						return false;
-					}
-				}
-			}
-		}
+		return piece->isPathClear(origin, destination, board_);
 	}
-	return true;
+	else
+	{
+		return false;
+	}
 }
 
 void ChessBoard::movePiece(coordinate oldPosition, coordinate newPosition)
 {
-	board_[newPosition].getPiece() = std::move(board_[oldPosition].getPiece());
+	board_[newPosition] = std::move(board_[oldPosition]);
 }
+
+void ChessBoard::placePiece(std::string colour, coordinate position, Piece piece)
+{
+	board_[position] = std::make_shared<Piece>(colour);
+}
+

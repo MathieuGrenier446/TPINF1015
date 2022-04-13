@@ -1,25 +1,31 @@
 #pragma once
 #include <map>
 #include <memory>
-#include "Square.h"
+#include <iostream>
 #include "Fou.h"
+
 
 using coordinate = std::tuple<int, int>;
 
 class ChessBoard
 {
 	public:
-	using board = std::shared_ptr<std::shared_ptr<int[]>[]>;
 	ChessBoard();
 	
-	Square& operator[](coordinate position)
+	std::shared_ptr<Piece>& operator[](coordinate position)
 	{
 		return board_[position];
 	}
 	
 	bool isMoveLegal(coordinate oldPosition, coordinate newPosition);
 	void movePiece(coordinate oldPosition, coordinate newPosition);
+	
+	std::shared_ptr<Piece> getPiece(coordinate position) { return board_[position]; };
 
 	protected:
-	std::map<coordinate, Square> board_; 
+
+	std::map<coordinate, std::shared_ptr<Piece>> board_;
+
+	private:
+	void placePiece(std::string colour, coordinate position, Piece piece);
 };
