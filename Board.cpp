@@ -14,7 +14,3 @@ Board::Board()
 		}
 	}
 }
-int main()
-{
-	cout << myMap[{1, 1}];
-}

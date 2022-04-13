@@ -22,4 +22,5 @@ class ChessBoard
 
 	protected:
 	std::map<coordinate, Square> board_; 
+
 };

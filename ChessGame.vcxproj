@@ -88,6 +88,7 @@
     <ClCompile Include="ChessBoard.cpp" />
     <ClCompile Include="Fou.cpp" />
     <ClCompile Include="ChessGUI.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Piece.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Square.cpp" />
