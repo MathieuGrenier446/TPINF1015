@@ -2,10 +2,10 @@
 #include <iostream>
 #include "ChessBoard.h"
 
-class Player : ChessBoard
+class Player
 {
 	public:
-	Player(std::string colour);
+	Player();
 	void makeMove(coordinate origin, coordinate destination);
 
 	private:

@@ -2,11 +2,14 @@
 
 Square::Square()
 {
-	_isAvailable = true;
 }
 
 Square::Square(Piece& chessPiece){
 
 	_chessPiece = std::make_shared<Piece>(chessPiece);
-	_isAvailable = false;
+}
+
+bool Square::isAvailable()
+{
+	return(_chessPiece==nullptr);
 }

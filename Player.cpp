@@ -1,8 +1,7 @@
 #include "Player.h"
 
-Player::Player(std::string colour)
+Player::Player()
 {
-	_colour = colour;
 }
 
 void Player::makeMove(coordinate origin, coordinate destination)
