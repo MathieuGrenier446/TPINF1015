@@ -1,5 +1,10 @@
 #include "Fou.h"
 
+Fou::Fou(coordinate position)
+{
+	position_ = position;
+}
+
 std::shared_ptr<std::shared_ptr<int[]>[]> Fou::findPath(coordinate destination)
 {
 	board path;

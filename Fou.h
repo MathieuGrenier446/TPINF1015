@@ -5,6 +5,8 @@ class Fou : Piece
 {	
 	public:
 
+	Fou(coordinate position);
+
 	board findPath(coordinate destination);
 	bool isMovePossible(coordinate destination);
 

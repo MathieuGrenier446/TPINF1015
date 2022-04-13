@@ -2,6 +2,7 @@
 
 Square::Square()
 {
+	_chessPiece = nullptr;
 }
 
 Square::Square(Piece& chessPiece){

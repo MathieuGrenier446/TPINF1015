@@ -6,7 +6,7 @@ Player::Player()
 
 void Player::makeMove(coordinate origin, coordinate destination)
 {
-	if(chessBoard[destination].isAvailable())
+	if(chessBoard.isMoveLegal(origin, destination))
 	{
 		chessBoard.movePiece(origin, destination);
 	}

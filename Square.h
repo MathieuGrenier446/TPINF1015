@@ -8,7 +8,7 @@ class Square
 	Square();
 	
 	Square(Piece& chessPiece);
-	friend class Piece;
+
 	bool isAvailable();
 	std::shared_ptr<Piece> getPiece() { return _chessPiece; } 
 

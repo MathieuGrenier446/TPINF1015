@@ -6,10 +6,12 @@ ChessBoard::ChessBoard()
 	{
 		for(int j = 0; j < 8; j++)
 		{
-			std::tuple<int, int> squarePosition(i,j);
+			coordinate squarePosition(i,j);
 			board_[squarePosition] = Square();
 		}
 	}
+	Fou fou = Fou(coordinate(1, 1));
+	board_[coordinate(1,1)] = Square(fou);
 }
 
 bool ChessBoard::isMoveLegal(coordinate oldPosition, coordinate newPosition)
@@ -34,4 +36,7 @@ bool ChessBoard::isMoveLegal(coordinate oldPosition, coordinate newPosition)
 	return true;
 }
 
-//board_[newPosition].getPiece() = std::move(board_[oldPosition].getPiece());
+void ChessBoard::movePiece(coordinate oldPosition, coordinate newPosition)
+{
+	board_[newPosition].getPiece() = std::move(board_[oldPosition].getPiece());
+}

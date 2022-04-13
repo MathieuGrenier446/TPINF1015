@@ -8,11 +8,7 @@ class Piece
 	using coordinate = std::tuple<int, int>;
 	using board = std::shared_ptr<std::shared_ptr<int[]>[]>;
 
-	Piece()
-	{
-		
-	}
-
+	Piece(){};
 
 	virtual board findPath(coordinate destination) = 0;
 	virtual bool isMovePossible(coordinate destination) = 0;

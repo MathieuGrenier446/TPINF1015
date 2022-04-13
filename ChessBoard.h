@@ -2,6 +2,7 @@
 #include <map>
 #include <memory>
 #include "Square.h"
+#include "Fou.h"
 
 using coordinate = std::tuple<int, int>;
 
@@ -17,6 +18,7 @@ class ChessBoard
 	}
 	
 	bool isMoveLegal(coordinate oldPosition, coordinate newPosition);
+	void movePiece(coordinate oldPosition, coordinate newPosition);
 
 	protected:
 	std::map<coordinate, Square> board_; 
